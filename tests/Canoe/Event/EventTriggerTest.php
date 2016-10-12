@@ -26,6 +26,9 @@ class EventTriggerTest extends \PHPUnit_Framework_TestCase
         return $this->trigger(new HowlEvent());
     }
 
+    /**
+     * 测试简单事件处理
+     */
     public function testSimpleEvent()
     {
         $this->on(SayEvent::class, function (SayEvent $event) {
@@ -36,6 +39,9 @@ class EventTriggerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("hello,world", $this->say());
     }
 
+    /**
+     * 测试事件默认动作取消
+     */
     public function testCancelEvent()
     {
         $this->on(SayEvent::class, function (SayEvent $event) {
@@ -45,6 +51,9 @@ class EventTriggerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("wow", $this->say());
     }
 
+    /**
+     * 测试全局事件侦听
+     */
     public function testGlobalListen()
     {
         EventSupervisor::on(SayEvent::class, function (Event $event) {
@@ -55,6 +64,9 @@ class EventTriggerTest extends \PHPUnit_Framework_TestCase
         $this->say();
     }
 
+    /**
+     * 测试事件优先级
+     */
     public function testPriority()
     {
         $this->on(SayEvent::class, function(SayEvent $event) {
