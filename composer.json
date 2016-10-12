@@ -1,0 +1,21 @@
+{
+    "name": "dustinfog/canoe-event",
+    "description": "A PHP event support Library",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Pan Zhandong",
+            "email": "xodger@163.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Canoe\\": "src/Canoe"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
